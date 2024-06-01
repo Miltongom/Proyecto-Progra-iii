@@ -1,0 +1,14 @@
+com\umg\redsocialx\controladores\exceptions\PreexistingEntityException.class
+com\umg\redsocialx\Comment.class
+com\umg\redsocialx\Like.class
+com\umg\redsocialx\Tweet.class
+com\umg\redsocialx\User.class
+com\umg\redsocialx\resources\JakartaEE9Resource.class
+com\umg\redsocialx\modelos\Usuarios.class
+com\umg\redsocialx\loginBean.class
+com\umg\redsocialx\controladores\exceptions\IllegalOrphanException.class
+com\umg\redsocialx\TweetBean.class
+com\umg\redsocialx\controladores\UsuariosJpaController.class
+com\umg\redsocialx\controladores\exceptions\NonexistentEntityException.class
+com\umg\redsocialx\JakartaRestConfiguration.class
+com\umg\redsocialx\controladores\exceptions\RollbackFailureException.class

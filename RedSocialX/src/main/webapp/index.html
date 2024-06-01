@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html">
+<head>
+    <meta charset="UTF-8"/>
+    <title>X. Es lo que está Pasando / X</title>
+    
+    <style>
+        body {
+            background-color: #000000; /* Cambiar el fondo a negro */
+            color: #FFFFFF; /* Cambiar el color de las letras a blanco */
+            margin: 0; /* Eliminamos el margen por defecto del cuerpo */
+            padding: 0; /* Eliminamos el relleno por defecto del cuerpo */
+            font-family: Arial, sans-serif; /* Establecemos una fuente de texto */
+        }
+        .container {
+            display: flex;
+            align-items: center; /* Alineamos verticalmente los elementos */
+            justify-content: center; /* Centramos horizontalmente los elementos */
+            height: 100vh; /* Altura total de la ventana */
+            text-align: center; /* Centramos el texto */
+        }
+        .logo {
+            width: 600px; /* Tamaño adecuado para la imagen */
+            height: auto; /* Mantén la proporción de la imagen */
+            margin-right: 40px; /* Añadimos un margen a la derecha */
+        }
+        .content {
+            max-width: 450px; /* Limitamos el ancho del contenido */
+        }
+        h1 {
+            font-size: 60px; /* Tamaño del título */
+            margin: 0 0 60px 0; /* Margen inferior */
+        }
+        h2 {
+            font-size: 30px; /* Tamaño del subtítulo */
+            margin: 0 0 20px 0; /* Margen inferior */
+        }
+        .button {
+            display: flex;
+            align-items: center; /* Centramos los elementos dentro del botón */
+            justify-content: center; /* Centramos el texto dentro del botón */
+            width: 100%; /* Ajustamos el ancho */
+            padding: 15px; /* Añadimos relleno */
+            margin-bottom: 20px; /* Espaciado inferior */
+            border: none; /* Sin borde */
+            border-radius: 5px; /* Bordes redondeados */
+            font-size: 20px; /* Tamaño de fuente */
+            text-decoration: none; /* Sin subrayado */
+            text-align: center; /* Centrar el texto */
+            cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+            font-family: Arial, sans-serif; /* Asegura que los botones también tengan la fuente Arial */
+        }
+        .button-primary {
+            background-color: #1DA1F2; /* Color de fondo azul de Twitter */
+            color: #FFFFFF; /* Color del texto */
+        }
+        .button-primary:hover {
+            background-color: #1A91DA; /* Color de fondo más oscuro al pasar sobre el botón */
+        }
+        .button-apple {
+            background-color: #FFFFFF; /* Color de fondo blanco para el botón de Apple */
+            color: #000000; /* Color del texto negro */
+            font-weight: bold; /* Texto en negrita */
+        }
+        .button-apple:hover {
+            background-color: #E0E0E0; /* Color de fondo más claro al pasar sobre el botón */
+        }
+        .button-secondary {
+            background-color: #000000; /* Fondo negro para el botón de iniciar sesión */
+            color: #1DA1F2; /* Color del texto celeste */
+            border: 2px solid #1DA1F2; /* Borde celeste */
+            font-weight: bold; /* Texto en negrita */
+        }
+        .button-secondary:hover {
+            background-color: #1A1A1A; /* Color de fondo más claro al pasar sobre el botón */
+        }
+        .button img {
+            margin-right: 10px; /* Espacio entre el ícono y el texto */
+            height: 24px; /* Tamaño del ícono */
+            width: auto; /* Mantén la proporción del ícono */
+        }
+        p {
+            margin: 10px 0; /* Margen superior e inferior */
+            font-family: Arial, sans-serif; /* Asegura que los párrafos también tengan la fuente Arial */
+        }
+        .divider {
+            margin: 20px 0; /* Margen superior e inferior */
+            color: #666666; /* Color de las líneas de división */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="https://graffica.ams3.digitaloceanspaces.com/2023/07/F1ySdm9WYAIbjHo-1024x1024.jpeg" alt="Descripción de la imagen" class="logo" />
+        <div class="content">
+            <h1>Lo que está <br/> pasando ahora</h1>
+            <h2>Únete Hoy</h2>
+            <a href="#" class="button button-apple"><img src="https://www.keyweo.com/wp-content/uploads/2022/03/el-logo-g-de-google.png" alt="Google" />Iniciar Sesión con Google</a>
+            <a href="#" class="button button-apple"><img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple" />Registrarse con Apple</a>
+            <a href="crearCuenta.xhtml" class="button button-primary">Crear Cuenta</a>
+            <p>Al registrarte, aceptas los Términos de servicio y la Política de privacidad, incluida la política de Uso de Cookies.</p>
+            <p class="divider">------------------ o ------------------</p>
+            <p>¿Ya tienes una cuenta?</p>
+            <a href="login.xhtml" class="button button-secondary">Iniciar Sesión</a>
+            <a href="paginaX.html" class="button">Pagina X</a>
+            <a href="paginaPrincipalX.xhtml" class="button">Pagina X xhtml</a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,238 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <head>
+        <title>Red Social</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #000;
+                color: #fff;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                height: 100%;
+                width: 100%;
+            }
+
+            .sidebar {
+                width: 250px;
+                background-color: #000;
+                padding: 20px;
+                box-sizing: border-box;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .sidebar button, .sidebar a {
+                background-color: #000;
+                color: #fff;
+                border: none;
+                border-radius: 20px;
+                padding: 10px;
+                font-size: 16px;
+                cursor: pointer;
+                width: 100%;
+                margin-bottom: 10px;
+                display: flex;
+                align-items: center;
+                text-decoration: none;
+                justify-content: flex-start;
+            }
+
+            .sidebar button:hover, .sidebar a:hover {
+                background-color: #1a1a1a;
+            }
+
+            .sidebar .icon {
+                margin-right: 10px;
+            }
+
+            .sidebar .post-button {
+                background-color: #1da1f2;
+                color: #fff;
+                font-weight: bold;
+                border-radius: 20px;
+                padding: 12px;
+                font-size: 16px;
+                text-align: center;
+            }
+
+            .container {
+                flex: 1;
+                padding: 20px;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .tab-container {
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 20px;
+            }
+
+            .tab {
+                flex: 1;
+                text-align: center;
+                padding: 10px;
+                border-bottom: 2px solid transparent;
+                cursor: pointer;
+            }
+
+            .tab.active {
+                border-bottom: 2px solid #1da1f2;
+            }
+
+            .tweet-form {
+                background-color: #1a1a1a;
+                border: 1px solid #333;
+                border-radius: 8px;
+                padding: 10px;
+                margin-bottom: 20px;
+            }
+
+            .post-textarea {
+                width: 100%;
+                border: none;
+                resize: none;
+                font-size: 16px;
+                padding: 10px;
+                border-radius: 5px;
+                box-sizing: border-box;
+                color: #fff;
+                background-color: #333;
+            }
+
+            .tweet-form button {
+                background-color: #1da1f2;
+                color: #fff;
+                border: none;
+                border-radius: 20px;
+                padding: 8px 16px;
+                font-size: 14px;
+                cursor: pointer;
+            }
+
+            .tweet-list {
+                list-style-type: none;
+                padding: 0;
+            }
+
+            .tweet-list-item {
+                background-color: #1a1a1a;
+                border: 1px solid #333;
+                border-radius: 8px;
+                padding: 10px;
+                margin-bottom: 20px;
+            }
+
+            .tweet-list-item p {
+                margin: 0;
+            }
+
+            .right-sidebar {
+                width: 300px;
+                background-color: #000;
+                padding: 20px;
+                box-sizing: border-box;
+            }
+
+            .search-form {
+                background-color: #1a1a1a;
+                border: 1px solid #333;
+                border-radius: 20px;
+                padding: 10px;
+                margin-bottom: 20px;
+                display: flex;
+                align-items: center;
+            }
+
+            .search-form input[type="text"] {
+                width: calc(100% - 40px);
+                border: none;
+                padding: 10px;
+                border-radius: 20px;
+                box-sizing: border-box;
+                background-color: #333;
+                color: #fff;
+                margin-right: 10px;
+            }
+
+            .search-form button {
+                background-color: #1da1f2;
+                color: #fff;
+                border: none;
+                border-radius: 20px;
+                padding: 8px 16px;
+                font-size: 14px;
+                cursor: pointer;
+            }
+
+            .trends, .subscribe {
+                background-color: #1a1a1a;
+                border: 1px solid #333;
+                border-radius: 8px;
+                padding: 20px;
+                margin-bottom: 20px;
+            }
+
+            .trends h2, .subscribe h2 {
+                margin-top: 0;
+            }
+
+            .trend-item {
+                padding: 10px 0;
+                border-bottom: 1px solid #333;
+            }
+
+            .trend-item:last-child {
+                border-bottom: none;
+            }
+          /* Agregar barra de desplazamiento vertical */
+        html, body {
+            height: 100%;
+            margin: 0;
+            overflow-y: auto; /* Agrega una barra de desplazamiento vertical cuando sea necesario */
+        }
+        </style>
+        <script>
+            function limitTextarea(textarea, maxLength) {
+                if (textarea.value.length > maxLength) {
+                    textarea.value = textarea.value.substring(0, maxLength);
+                }
+            }
+        </script>
+    </head>
+    <h:body>
+        <div class="sidebar">
+            <a href="#" class="sidebar-item"><i class="fas fa-home icon"></i>Hogar</a>
+            <a href="#" class="sidebar-item"><i class="fas fa-hashtag icon"></i>Explorar</a>
+            <a href="#" class="sidebar-item"><i class="fas fa-bell icon"></i>Notificaciones</a>
+            <a href="#" class="sidebar-item"><i class="fas fa-envelope icon"></i>Mensajes</a>
+            <a href="#" class="sidebar-item"><i class="fas fa-lightbulb icon"></i>Grok</a>
+            <a href="#" class="sidebar-item"><i class="fas fa-users icon"></i>Comunidades</a>
+            <a href="#" class="sidebar-item"><i class="fas fa-user icon"></i>Perfil</a>
+            <a href="#" class="sidebar-item"><i class="fas fa-ellipsis-h icon"></i>Más</a>
+            <h:form>
+                <h:commandButton value="Post" action="#{tweetBean.postTweet}" styleClass="post-button"/>
+            </h:form>
+        </div>
+        <div class="container">
+            <div class="tab-container">
+                <div class="tab active">Para ti</div>
+                <div class="tab">Siguiendo</div>
+            </div>
+            <h:form id="tweetForm" styleClass="tweet-form">
+                <h:outputLabel for="post" value="Post:" />
+                <textarea id="post" name="post" class="post-textarea" rows="4" cols="10" required="true"
+                          oninput="limitTextarea(this, 300);"></textarea>
+              </h:form>  
+               <input type="submit" value="Publicar Post" onclick="#{tweetBean.postTweet}" class="btn" />                                
+            
+        </div>
+    </h:body>
+</html>
